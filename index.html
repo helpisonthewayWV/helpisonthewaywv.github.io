@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Help Is On The Way! | House Cleaning Service in Charleston, WV</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --accent: #f59e0b;
+    --dark: #0f172a;
+    --text: #334155;
+    --muted: #64748b;
+    --bg: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 35px -10px rgba(37, 99, 235, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* KEYFRAME ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.4); }
+    70% { box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  /* CLAIM BANNER */
+  .claim-banner {
+    background: linear-gradient(135deg, #1e3a8a, var(--primary));
+    color: white;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 101;
+  }
+  .claim-banner a { color: #fde047; text-decoration: underline; font-weight: 600; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 38px; left: 0; right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 100;
+    padding: 0 6%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 76px;
+    transition: all 0.3s ease;
+  }
+  .nav-logo-wrap {
+    display: flex; flex-direction: column;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.01em;
+  }
+  .nav-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.925rem;
+    font-weight: 500;
+    color: var(--text);
+    transition: color 0.2s ease;
+  }
+  .nav-links a:hover { color: var(--primary); }
+  .nav-cta {
+    background: var(--primary);
+    color: white !important;
+    padding: 0.65rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    transition: all 0.2s ease !important;
+  }
+  .nav-cta:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+  }
+
+  /* HERO */
+  .hero {
+    min-height: calc(100vh - 114px);
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    padding: calc(76px + 3rem) 6% 4rem 6%;
+    align-items: center;
+    gap: 4rem;
+    background: radial-gradient(circle at top right, #eff6ff 0%, #f8fafc 60%);
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--primary-light);
+    color: var(--primary);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.03em;
+    text-transform: uppercase;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 4.5vw, 4.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+  }
+  .hero h1 span { color: var(--primary); font-style: italic; }
+  .hero p {
+    font-size: 1.125rem;
+    color: var(--muted);
+    font-weight: 400;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+  .hero-btns {
+    display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 2.25rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+    transition: all 0.25s ease;
+  }
+  .btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
+  }
+  .btn-outline {
+    background: white;
+    border: 2px solid #cbd5e1;
+    color: var(--dark);
+    padding: 0.95rem 2rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.25s ease;
+  }
+  .btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-light);
+  }
+
+  .hero-stats-row {
+    display: flex; gap: 2rem; margin-top: 3rem;
+    padding-top: 2rem; border-top: 1px solid #e2e8f0;
+  }
+  .stat-item h3 {
+    font-size: 1.5rem; font-weight: 700; color: var(--dark);
+    display: flex; align-items: center; gap: 4px;
+  }
+  .stat-item p { font-size: 0.85rem; color: var(--muted); margin-bottom: 0; font-weight: 500; }
+
+  /* HERO RIGHT / IMAGES & CARDS */
+  .hero-right {
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+  }
+  .hero-img-container {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 520px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    animation: float 6s ease-in-out infinite;
+  }
+  .hero-img-container img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .floating-card {
+    position: absolute;
+    bottom: -25px; left: -30px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    max-width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+  }
+  .stars { color: var(--accent); font-size: 1rem; margin-bottom: 0.4rem; letter-spacing: 2px; }
+  .floating-card p { font-size: 0.875rem; font-style: italic; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+  .floating-card span { font-size: 0.75rem; font-weight: 700; color: var(--dark); }
+
+  /* SERVICES SECTION */
+  .services {
+    padding: 6rem 6%;
+    background: var(--white);
+  }
+  .section-header {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 4rem auto;
+  }
+  .section-tag {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--primary); margin-bottom: 0.75rem; display: block;
+  }
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    color: var(--dark);
+    margin-bottom: 1rem;
+  }
+  .section-header p { color: var(--muted); font-size: 1.05rem; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+  }
+  .service-card {
+    background: var(--bg);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: #cbd5e1;
+  }
+  .service-img-wrap {
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+  }
+  .service-img-wrap img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .service-card:hover .service-img-wrap img {
+    transform: scale(1.05);
+  }
+  .service-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .service-content h3 {
+    font-size: 1.35rem; font-weight: 700; color: var(--dark); margin-bottom: 0.75rem;
+  }
+  .service-content p { color: var(--muted); font-size: 0.95rem; margin-bottom: 1.5rem; }
+  .service-link {
+    font-size: 0.9rem; font-weight: 600; color: var(--primary);
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    transition: gap 0.2s ease;
+  }
+  .service-link:hover { gap: 10px; }
+
+  /* ABOUT / HIGHLIGHTS SECTION */
+  .about-section {
+    padding: 6rem 6%;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    margin-bottom: 1.5rem;
+    color: white;
+  }
+  .about-text p {
+    color: #94a3b8;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+  }
+  .about-features {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .feature-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 14px;
+  }
+  .feature-box h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #f8fafc; }
+  .feature-box p { font-size: 0.85rem; color: #94a3b8; margin-bottom: 0; }
+  
+  .about-image-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+  }
+  .about-img {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 260px;
+    box-shadow: var(--shadow-md);
+  }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; }
+  .about-img:nth-child(2) { transform: translateY(30px); }
+
+  /* REVIEWS SECTION */
+  .reviews {
+    padding: 6rem 6%;
+    background: var(--bg);
+  }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  .review-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid #e2e8f0;
+    display: flex; flex-direction: column; justify-content: space-between;
+    transition: transform 0.3s ease;
+  }
+  .review-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+  .review-text { font-style: italic; color: var(--text); margin-bottom: 1.5rem; font-size: 0.975rem; }
+  .reviewer-info { display: flex; align-items: center; gap: 1rem; }
+  .reviewer-avatar {
+    width: 45px; height: 45px; border-radius: 50%; background: var(--primary-light);
+    color: var(--primary); display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 1rem;
+  }
+  .reviewer-name h4 { font-size: 0.95rem; font-weight: 700; color: var(--dark); }
+  .reviewer-name span { font-size: 0.75rem; color: var(--muted); }
+
+  /* CTA BANNER SECTION */
+  .cta-banner-section {
+    padding: 0 6% 6rem 6%;
+    background: var(--bg);
+  }
+  .cta-box {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    border-radius: 24px;
+    padding: 4rem 3rem;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-box h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    margin-bottom: 1rem;
+  }
+  .cta-box p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2.5rem auto; }
+  .btn-white {
+    background: white;
+    color: var(--primary);
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: var(--shadow-md);
+    transition: all 0.25s ease;
+  }
+  .btn-white:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: #94a3b8;
+    padding: 4rem 6% 2rem 6%;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  .footer-brand h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; color: white; margin-bottom: 1rem;
+  }
+  .footer-brand p { font-size: 0.95rem; max-width: 350px; margin-bottom: 1.5rem; }
+  .footer-links h4 { color: white; font-size: 1rem; font-weight: 600; margin-bottom: 1.25rem; }
+  .footer-links ul { list-style: none; }
+  .footer-links li { margin-bottom: 0.75rem; }
+  .footer-links a { color: #94a3b8; text-decoration: none; transition: color 0.2s; font-size: 0.95rem; }
+  .footer-links a:hover { color: white; }
+  .footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    font-size: 0.875rem;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width: 968px) {
+    .hero, .about-grid, .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-right { order: -1; }
+    .hero-img-container { height: 380px; max-width: 100%; }
+    .nav-links { display: none; } /* Simplified mobile for static template view */
+  }
+</style>
+</head>
+<body>
+
+<div class="claim-banner">
+  This is a free preview built for Help Is On The Way! — <a href="mailto:hello@fire4biz.com">claim this website for $249</a>
+</div>
+
+<nav>
+  <div class="nav-logo-wrap">
+    <div class="nav-logo">Help Is On The Way!</div>
+    <span class="nav-badge">Charleston, WV</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About Us</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="tel:+13044442439" class="nav-cta">Call +1 304-444-2439</a></li>
+  </ul>
+</nav>
+
+<section class="hero animate-fade-in">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+      Top-Rated Local House Cleaning Service · Open Until 6 PM
+    </div>
+    <h1>Immaculate Homes, <em>Stress-Free</em> Living.</h1>
+    <p>Charleston’s trusted women-owned cleaning service. Professional, thorough, and reliable house cleaning tailored to keep your living space pristine and healthy.</p>
+    <div class="hero-btns">
+      <a href="tel:+13044442439" class="btn-primary">
+        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        Call +1 304-444-2439
+      </a>
+      <a href="https://facebook.com" target="_blank" class="btn-outline">
+        Visit Facebook Page
+      </a>
+    </div>
+
+    <div class="hero-stats-row">
+      <div class="stat-item">
+        <h3>4.5 <span style="color: var(--accent); font-size: 1.2rem;">★</span></h3>
+        <p>13+ Verified Reviews</p>
+      </div>
+      <div class="stat-item">
+        <h3>100%</h3>
+        <p>Women-Owned & Operated</p>
+      </div>
+      <div class="stat-item">
+        <h3>Charleston</h3>
+        <p>Proudly Local WV Service</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-img-container">
+      <!-- Clean living room / cleaning imagery -->
+      <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&q=80&w=1000" alt="Professional House Cleaning Service">
+      <div class="floating-card">
+        <div class="stars">★★★★★</div>
+        <p>"They made our house look brand new. Prompt, polite, and extremely detailed cleaning!"</p>
+        <span>— Charleston Homeowner</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-header">
+    <span class="section-tag">Our Cleaning Expertise</span>
+    <h2>Tailored Services for Every Home</h2>
+    <p>From routine upkeep to deep residential sanitation, we handle the dirty work so you can relax.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?auto=format&fit=crop&q=80&w=800" alt="Regular House Cleaning">
+      </div>
+      <div class="service-content">
+        <div>
+          <h3>Routine House Cleaning</h3>
+          <p>Consistent, reliable maintenance cleaning customized to your schedule—weekly, bi-weekly, or monthly.</p>
+        </div>
+        <a href="tel:+13044442439" class="service-link">Book Routine Clean →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&q=80&w=800" alt="Deep Cleaning">
+      </div>
+      <div class="service-content">
+        <div>
+          <h3>Deep Detail Cleaning</h3>
+          <p>An intensive top-to-bottom scrub targeting hard-to-reach areas, baseboards, fixtures, and hidden dust buildup.</p>
+        </div>
+        <a href="tel:+13044442439" class="service-link">Schedule Deep Clean →</a>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img-wrap">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800" alt="Move In/Out Cleaning">
+      </div>
+      <div class="service-content">
+        <div>
+          <h3>Move-In & Move-Out Clean</h3>
+          <p>Ensure your old or new property is spotless and ready for inspection with our comprehensive turnover service.</p>
+        </div>
+        <a href="tel:+13044442439" class="service-link">Get a Quote →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <span class="section-tag" style="color: #60a5fa;">Why Choose Us</span>
+      <h2>Dedicated to Excellence in Charleston, West Virginia</h2>
+      <p>As a local women-owned business, we take immense pride in delivering trustworthy, high-caliber house cleaning solutions. We treat your home with the absolute care and respect it deserves.</p>
+      
+      <div class="about-features">
+        <div class="feature-box">
+          <h4>Trusted & Local</h4>
+          <p>Proudly serving Charleston residents with personalized care.</p>
+        </div>
+        <div class="feature-box">
+          <h4>Detailed Results</h4>
+          <p>Uncompromising standards on every single room we touch.</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-image-grid">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&q=80&w=600" alt="Cleaning supplies and sparkling clean counter">
+      </div>
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&q=80&w=600" alt="Immaculate living room interior">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="section-header">
+    <span class="section-tag">Customer Feedback</span>
+    <h2>Loved By Charleston Homeowners</h2>
+    <p>Read what our valued clients have to say about our cleaning crew.</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Help Is On The Way! truly saved our schedule. They arrived right on time and left our home looking and smelling incredible. Absolutely worth it!"</p>
+      </div>
+      <div class="reviewer-info">
+        <div class="reviewer-avatar">S</div>
+        <div class="reviewer-name">
+          <h4>Sarah M.</h4>
+          <span>Charleston Resident</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Being a women-owned local small business, their attention to detail is top tier. Friendly communication and exceptional cleaning results every single time."</p>
+      </div>
+      <div class="reviewer-info">
+        <div class="reviewer-avatar">D</div>
+        <div class="reviewer-name">
+          <h4>David K.</h4>
+          <span>Local Homeowner</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Reliable, honest, and meticulous. My kitchen and bathrooms have never looked this shiny. Highly recommend calling them for any deep clean!"</p>
+      </div>
+      <div class="reviewer-info">
+        <div class="reviewer-avatar">R</div>
+        <div class="reviewer-name">
+          <h4>Rachel T.</h4>
+          <span>Charleston Client</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner-section">
+  <div class="cta-box">
+    <h2>Ready For a Spotless Home?</h2>
+    <p>Let Help Is On The Way! take care of the cleaning chores. Give us a call today to schedule your service or request an estimate!</p>
+    <a href="tel:+13044442439" class="btn-white">Call +1 304-444-2439 Now</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Help Is On The Way!</h3>
+      <p>Professional house cleaning services dedicated to keeping homes across Charleston, West Virginia sparkling clean and comfortable.</p>
+      <p style="color: white; font-weight: 600; font-size: 0.9rem;">🌸 Identifies as women-owned</p>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="https://facebook.com" target="_blank">Facebook Page</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contact Info</h4>
+      <ul>
+        <li><a href="tel:+13044442439">+1 304-444-2439</a></li>
+        <li><span>Open Daily · Closes 6 PM</span></li>
+        <li><span>Charleston, WV</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Help Is On The Way! All Rights Reserved.</p>
+    <p>House Cleaning Services · Charleston, West Virginia</p>
+  </div>
+</footer>
+
+</body>
+</html>
